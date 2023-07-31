@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+    <?php
+      if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $first_name = $_POST["first_name"];
+        $last_name = $_POST["last_name"];
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $gender = $_POST["gender"];
+        $academic_year = $_POST["academic_year"];
+        $email = $_POST["email"];
+        $phone_no = $_POST["phone_no"];
+
+        echo "<p><strong>First Name:</strong> $first_name</p>";
+        echo "<p><strong>Last Name:</strong> $last_name</p>";
+        echo "<p><strong>Username:</strong> $username</p>";
+        echo "<p><strong>Password:</strong> $password</p>";
+        echo "<p><strong>Gender:</strong> $gender</p>";
+        echo "<p><strong>Academic Year:</strong> $academic_year</p>";
+        echo "<p><strong>Email:</strong> $email</p>";
+        echo "<p><strong>Phone No:</strong> $phone_no</p>";
+      }
+    ?>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+      <label>First Name:</label>
+      <input type="text" name="first_name" required><br>
+
+      <label>Last Name:</label>
+      <input type="text" name="last_name" required><br>
+
+      <label>Username:</label>
+      <input type="text" name="username" required><br>
+
+      <label>Password:</label>
+      <input type="password" name="password" required><br>
+
+      <label>Gender:</label>
+      <input type="radio" name="gender" value="male" required>Male
+      <input type="radio" name="gender" value="female" required>Female<br>
+
+      <label>Academic Year:</label>
+      <select name="academic_year" required>
+        <option value="1st Year">1st Year</option>
+        <option value="2nd Year">2nd Year</option>
+        <option value="3rd Year">3rd Year</option>
+        <option value="4th Year">4th Year</option>
+      </select><br>
+
+      <label>Email:</label>
+      <input type="email" name="email" required><br>
+
+      <label>Phone No:</label>
+      <input type="tel" name="phone_no" required><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

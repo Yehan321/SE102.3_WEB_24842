@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Electricity Bill Calculator</title>
+</head>
+<body>
+
+<h1>Electricity Bill Calculator</h1>
+
+<form action="" method="post">
+  <label for="units">Enter units consumed:</label>
+  <input type="number" name="units" id="units">
+  <br>
+  <input type="submit" value="Calculate Bill">
+</form>
+
+<?php
+if (isset($_POST['units'])) {
+  $units = $_POST['units'];
+  $rate = 0;
+
+  if ($units <= 50) {
+    $rate = 3.5;
+  } else if ($units <= 100) {
+    $rate = 4;
+  } else if ($units <= 150) {
+    $rate = 5.2;
+  } else {
+    $rate = 6.5;
+  }
+
+  $total_bill = $units * $rate;
+
+  echo "<h2>Electricity Bill</h2>";
+  echo "<p>Units consumed: $units</p>";
+  echo "<p>Unit rate: $rate</p>";
+  echo "<p>Total bill: $total_bill</p>";
+}
+?>
+
+</body>
+</html>

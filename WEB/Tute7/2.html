@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marks Calculator</title>
+</head>
+<body>
+<h1>Marks Calculator</h1>
+<p>Enter 5 marks and the program will calculate the total and average of those marks.</p>
+<script>
+function getMarks() {
+  var marks = [];
+  for (var i = 0; i < 5; i++) {
+    var mark = prompt("Enter mark " + (i + 1) + ": ");
+    marks.push(mark);
+  }
+  return marks;
+}
+
+var marks = getMarks();
+var total = 0;
+for (var i = 0; i < marks.length; i++) {
+  total += marks[i];
+}
+var average = total / marks.length;
+
+if (average >= 30) {
+  alert("Congratulations! You passed!");
+} else {
+  alert("Better luck next time!");
+}
+</script>
+</body>
+</html>

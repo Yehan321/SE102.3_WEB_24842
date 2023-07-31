@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Color Buttons</title>
+</head>
+<body>
+<h1>Color Buttons</h1>
+<button id="redButton">Red</button>
+<button id="greenButton">Green</button>
+<button id="blueButton">Blue</button>
+<script>
+const redButton = document.getElementById("redButton");
+const greenButton = document.getElementById("greenButton");
+const blueButton = document.getElementById("blueButton");
+
+redButton.addEventListener("mouseover", function() {
+  this.style.backgroundColor = "red";
+});
+
+redButton.addEventListener("mouseout", function() {
+  this.style.backgroundColor = "white";
+});
+
+greenButton.addEventListener("mouseover", function() {
+  this.style.backgroundColor = "green";
+});
+
+greenButton.addEventListener("mouseout", function() {
+  this.style.backgroundColor = "white";
+});
+
+blueButton.addEventListener("mouseover", function() {
+  this.style.backgroundColor = "blue";
+});
+
+blueButton.addEventListener("mouseout", function() {
+  this.style.backgroundColor = "white";
+});
+</script>
+</body>
+</html>

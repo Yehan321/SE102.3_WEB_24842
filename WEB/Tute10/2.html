@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NIC Number Year of Birth</title>
+</head>
+<body>
+<h1>NIC Number Year of Birth</h1>
+<input type="text" id="nic_number" placeholder="Enter NIC number">
+<button onclick="getYearOfBirth()">Get Year of Birth</button>
+<p id="year_of_birth"></p>
+<script>
+function getYearOfBirth() {
+  var nic_number = document.getElementById("nic_number").value;
+  var year_of_birth = nic_number.substring(0, 2);
+  document.getElementById("year_of_birth").innerHTML = year_of_birth;
+}
+</script>
+</body>
+</html>
